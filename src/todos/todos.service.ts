@@ -48,5 +48,8 @@ export class TodosServices {
     return result;
   }
 
-  delete(id: string) {}
+  async delete(id: string): Promise<ITodosModel | null> {
+    const result = await this.model.findByIdAndDelete(id);
+    return result;
+  }
 }

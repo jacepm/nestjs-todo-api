@@ -44,7 +44,7 @@ export class TodosController {
 
   @Delete("/:id")
   async delete({ params }: MayaJsContext): Promise<IRouteRequest> {
-    const data = {};
+    const data = await this.services.delete(params.id);
     return { message: "Successfully deleted a todo by id.", data: [data] };
   }
 }
