@@ -8,8 +8,8 @@ interface ITodos {
 }
 
 interface IDateStamps {
-  DateCreated: string;
-  DateUpdated: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 interface ITodosModel extends ITodos, IDateStamps, Document {}
