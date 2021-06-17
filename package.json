@@ -15,12 +15,14 @@
     "@mayajs/core": "^0.5.3",
     "@mayajs/mongo": "^0.5.1",
     "@mayajs/router": "^0.5.4",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "mongoose": "^5.12.14",
     "mongoose-paginate": "^5.0.3"
   },
   "devDependencies": {
     "@mayajs/cli": "^0.5.2",
+    "@types/body-parser": "^1.19.0",
     "@types/cors": "^2.8.10",
     "@types/mongoose": "^5.11.97",
     "@types/mongoose-paginate": "^5.0.9",
