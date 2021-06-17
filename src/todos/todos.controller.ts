@@ -32,7 +32,7 @@ export class TodosController {
 
   @Put("/:id")
   async replace({ body, params }: MayaJsContext): Promise<IRouteRequest> {
-    const data = {};
+    const data = await this.services.replace(params.id, body);
     return { message: "Successfully replaced a todo by id.", data: [data] };
   }
 

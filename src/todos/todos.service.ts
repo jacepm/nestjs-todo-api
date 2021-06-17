@@ -38,7 +38,10 @@ export class TodosServices {
     return result;
   }
 
-  replace(id: string, body: ITodos) {}
+  async replace(id: string, body: ITodos): Promise<ITodosModel | null> {
+    const result = await this.model.findByIdAndUpdate(id, body, { new: true });
+    return result;
+  }
 
   async update(id: string, body: ITodos): Promise<ITodosModel | null> {
     const result = await this.model.findByIdAndUpdate(id, body, { new: true });
