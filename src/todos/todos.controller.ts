@@ -2,11 +2,7 @@ import { Get, Patch, Post, Delete, Put } from "@mayajs/common";
 import { MayaJsContext } from "@mayajs/router";
 import { Controller } from "@mayajs/core";
 import { TodosServices } from "./todos.service";
-
-interface IRouteRequest {
-  message: string;
-  data: any;
-}
+import { IRouteRequest } from "../interfaces";
 
 @Controller()
 export class TodosController {
