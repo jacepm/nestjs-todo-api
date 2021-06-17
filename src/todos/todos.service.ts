@@ -33,14 +33,17 @@ export class TodosServices {
     return result;
   }
 
-  async getById(id: string): Promise<ITodosModel> {
-    const result: any = await this.model.findById(id);
+  async getById(id: string): Promise<ITodosModel | null> {
+    const result = await this.model.findById(id);
     return result;
   }
 
   replace(id: string, body: ITodos) {}
 
-  update(id: string, body: ITodos) {}
+  async update(id: string, body: ITodos): Promise<ITodosModel | null> {
+    const result = await this.model.findByIdAndUpdate(id, body, { new: true });
+    return result;
+  }
 
   delete(id: string) {}
 }

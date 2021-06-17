@@ -38,7 +38,7 @@ export class TodosController {
 
   @Patch("/:id")
   async update({ body, params }: MayaJsContext): Promise<IRouteRequest> {
-    const data = {};
+    const data = await this.services.update(params.id, body);
     return { message: "Successfully updated a todo by id.", data: [data] };
   }
 
