@@ -14,10 +14,14 @@
     "@mayajs/common": "^0.5.0",
     "@mayajs/core": "^0.5.3",
     "@mayajs/mongo": "^0.5.1",
-    "@mayajs/router": "^0.5.4"
+    "@mayajs/router": "^0.5.4",
+    "mongoose": "^5.12.14",
+    "mongoose-paginate": "^5.0.3"
   },
   "devDependencies": {
     "@mayajs/cli": "^0.5.2",
+    "@types/mongoose": "^5.11.97",
+    "@types/mongoose-paginate": "^5.0.9",
     "@types/node": "^14.0.14",
     "typescript": "^3.9.6"
   }
