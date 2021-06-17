@@ -28,7 +28,10 @@ export class TodosServices {
     return result;
   }
 
-  get() {}
+  async get() {
+    const result = await this.model.find();
+    return result;
+  }
 
   getById(id: string) {}
 
