@@ -13,6 +13,7 @@
   "dependencies": {
     "@mayajs/common": "^0.5.0",
     "@mayajs/core": "^0.5.3",
+    "@mayajs/mongo": "^0.5.1",
     "@mayajs/router": "^0.5.4"
   },
   "devDependencies": {
