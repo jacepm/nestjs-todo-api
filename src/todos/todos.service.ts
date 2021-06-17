@@ -1,14 +1,27 @@
 import { Service } from "@mayajs/core";
+import { MongoDbServices } from "@mayajs/mongo";
+import { Document, PaginateModel } from "mongoose";
 
 interface ITodos {
-  _id?: string;
   title: string;
   completed?: boolean;
 }
 
+interface IDateStamps {
+  DateCreated: string;
+  DateUpdated: string;
+}
+
+interface ITodosModel extends ITodos, IDateStamps, Document {}
+
 @Service()
 export class TodosServices {
-  constructor() {}
+  constructor(private mongo: MongoDbServices) {}
+
+  get model(): PaginateModel<ITodosModel> {
+    const db = this.mongo.database("test");
+    return <any>db.instance.model("todos");
+  }
 
   create(body: ITodos) {}
 
