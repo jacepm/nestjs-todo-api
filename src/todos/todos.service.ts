@@ -20,10 +20,13 @@ export class TodosServices {
 
   get model(): PaginateModel<ITodosModel> {
     const db = this.mongo.database("test");
-    return <any>db.instance.model("todos");
+    return <any>db.instance.model("Todos");
   }
 
-  create(body: ITodos) {}
+  async create(body: ITodos): Promise<ITodos> {
+    const result = await this.model.create(body);
+    return result;
+  }
 
   get() {}
 
