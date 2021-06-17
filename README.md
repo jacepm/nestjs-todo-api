@@ -1,4 +1,4 @@
-# MayaTodo MayaJS Project
+# TODO Backend
 
 This project was created with [MayaJS CLI](https://github.com/mayajs/cli) version 0.5.3.
 
