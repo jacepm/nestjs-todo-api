@@ -1,6 +1,6 @@
 import { Module } from "@mayajs/core";
 import { RouterModule } from "@mayajs/router";
-import { MongoDbModule } from "@mayajs/mongo";
+import { MongoDbModule, MongoDbServices } from "@mayajs/mongo";
 import { routes } from "./app.routing.module";
 import { AppController } from "./app.controller";
 import { TodosController } from "./todos/todos.controller";
@@ -17,7 +17,7 @@ export const mongoOptions = {
 @Module({
   declarations: [AppController, TodosController],
   imports: [RouterModule.forRoot(routes), MongoDbModule.forRoot(mongoOptions)],
-  providers: [TodosServices],
+  providers: [MongoDbServices, TodosServices],
   bootstrap: AppController,
 })
 export class AppModule {}
