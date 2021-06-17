@@ -26,7 +26,7 @@ export class TodosController {
 
   @Get("/:id")
   async getById({ params }: MayaJsContext): Promise<IRouteRequest> {
-    const data = {};
+    const data = await this.services.getById(params.id);
     return { message: "Successfully get a todo by id.", data: [data] };
   }
 

@@ -23,17 +23,20 @@ export class TodosServices {
     return <any>db.instance.model("Todos");
   }
 
-  async create(body: ITodos): Promise<ITodos> {
+  async create(body: ITodos): Promise<ITodosModel> {
     const result = await this.model.create(body);
     return result;
   }
 
-  async get() {
+  async get(): Promise<ITodosModel[]> {
     const result = await this.model.find();
     return result;
   }
 
-  getById(id: string) {}
+  async getById(id: string): Promise<ITodosModel> {
+    const result: any = await this.model.findById(id);
+    return result;
+  }
 
   replace(id: string, body: ITodos) {}
 
